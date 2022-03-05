@@ -1,0 +1,30 @@
+[
+  {
+    "name": "botako",
+    "address": "nevesinjska",
+    "cuisine": "italian",
+    "website": "http:/www.botako.com",
+    "description": "Lepa hrana\r\n"
+  },
+  {
+    "name": "amel",
+    "address": "ohridska",
+    "cuisine": "love",
+    "website": "https:/www.amel.com",
+    "description": "joju"
+  },
+  {
+    "name": "pizza bar",
+    "address": "hram",
+    "cuisine": "pice",
+    "website": "htpps://www.facebook.com",
+    "description": "f"
+  },
+  {
+    "name": "monks",
+    "address": "kneginje",
+    "cuisine": "kafa",
+    "website": "htpps://www.facebook.com",
+    "description": "ambijent"
+  }
+]
