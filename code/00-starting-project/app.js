@@ -29,6 +29,11 @@ app.get("/restaurants", function (req, res) {
   });
 });
 
+app.get("/restaurants/:id", function (req, res) {
+  const restaurantId = req.params.id;
+  res.render("restaurant-detail", { rid: restaurantId });
+});
+
 app.post("/recommend", function (req, res) {
   const restaurant = req.body;
   const filePath = path.join(__dirname, "data", "restaurants.json");
