@@ -1,5 +1,6 @@
 [
   {
+    "id": "r1",
     "name": "botako",
     "address": "nevesinjska",
     "cuisine": "italian",
@@ -7,6 +8,7 @@
     "description": "Lepa hrana\r\n"
   },
   {
+    "id": "r2",
     "name": "amel",
     "address": "ohridska",
     "cuisine": "love",
@@ -14,6 +16,7 @@
     "description": "joju"
   },
   {
+    "id": "r3",
     "name": "pizza bar",
     "address": "hram",
     "cuisine": "pice",
@@ -21,10 +24,19 @@
     "description": "f"
   },
   {
+    "id": "r4",
     "name": "monks",
     "address": "kneginje",
     "cuisine": "kafa",
     "website": "htpps://www.facebook.com",
     "description": "ambijent"
+  },
+  {
+    "name": "Milky",
+    "address": "vracar",
+    "cuisine": "palacinke",
+    "website": "htpps://www.facebook.com",
+    "description": "dobar slatki dorucak",
+    "id": "9031d20d-a943-498e-b3c8-04e17727e128"
   }
 ]
