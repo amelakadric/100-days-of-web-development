@@ -1,9 +1,9 @@
-const fs = require("fs");
-
 const { urlencoded } = require("express");
 const express = require("express");
 const path = require("path");
-const uuid = require("uuid");
+
+const defaultRoutes = require("./routes/default");
+const restaurantRoutes = require("./routes/restaurants");
 
 const app = express();
 
@@ -14,72 +14,16 @@ app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", function (req, res) {
-  res.render("index");
-});
+app.use("/", defaultRoutes);
 
-app.get("/restaurants", function (req, res) {
-  const restaurant = req.body;
-  const filePath = path.join(__dirname, "data", "restaurants.json");
-
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
-  res.render("restaurants", {
-    numberOfRestaurants: storedRestaurants.length,
-    restaurants: storedRestaurants,
-  });
-});
-
-app.get("/restaurants/:id", function (req, res) {
-  const restaurantId = req.params.id;
-
-  const filePath = path.join(__dirname, "data", "restaurants.json");
-
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
-
-  for (const restaurant of storedRestaurants) {
-    if (restaurant.id === restaurantId) {
-      return res.render("restaurant-detail", {
-        restaurant: restaurant,
-      });
-    }
-  }
-
-  res.render("404");
-});
-
-app.post("/recommend", function (req, res) {
-  const restaurant = req.body;
-  restaurant.id = uuid.v4();
-  const filePath = path.join(__dirname, "data", "restaurants.json");
-
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
-  storedRestaurants.push(restaurant);
-
-  fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
-  res.redirect("/confirm");
-});
-
-app.get("/about", function (req, res) {
-  res.render("about");
-});
-
-app.get("/confirm", function (req, res) {
-  res.render("confirm");
-});
-
-app.get("/index", function (req, res) {
-  res.render("index");
-});
-
-app.get("/recommend", function (req, res) {
-  res.render("recommend");
-});
+app.use("/", restaurantRoutes);
 
 app.use(function (req, res) {
-  res.render("404");
+  res.status(404).render("404");
+});
+
+app.use(function (error, req, res, next) {
+  res.status(500).render("500");
 });
 
 app.listen(3000);

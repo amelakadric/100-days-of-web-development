@@ -20,7 +20,7 @@
     "name": "pizza bar",
     "address": "hram",
     "cuisine": "pice",
-    "website": "htpps://www.facebook.com",
+    "website": "https://www.facebook.com",
     "description": "f"
   },
   {
@@ -28,14 +28,14 @@
     "name": "monks",
     "address": "kneginje",
     "cuisine": "kafa",
-    "website": "htpps://www.facebook.com",
+    "website": "https://www.facebook.com",
     "description": "ambijent"
   },
   {
     "name": "Milky",
     "address": "vracar",
     "cuisine": "palacinke",
-    "website": "htpps://www.facebook.com",
+    "website": "https://www.facebook.com",
     "description": "dobar slatki dorucak",
     "id": "9031d20d-a943-498e-b3c8-04e17727e128"
   }
